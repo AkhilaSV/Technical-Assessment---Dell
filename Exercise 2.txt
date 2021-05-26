@@ -1,0 +1,41 @@
+﻿EXERCISE: 
+https://www.dell.com/support/home/en-us 
+From the above URL, 
+1. Transform the icons' row into 2 rows and make it occupy only the left half  of the page container; 
+2. Move the "TechDirect" and "MyService360" boxes to the remaining right  half of the container; 
+3. Delete the "Dell EMC Support Technologies" section (where those boxes  were initially). 
+Here is how it should look like after manipulations: 
+https://github.com/tntdevs/interview-survey/blob/master/img/ex-1.jpg 
+
+CODE:
+
+var child1 = document.getElementById("divResourceLinks"); 
+var child2 = document.getElementById("divEnterpriseProductLinks");
+
+
+child1.classList.add('col-lg-6');
+child1.childNodes[1].childNodes[1].childNodes[1].classList.add('col-lg-6');
+child1.childNodes[1].childNodes[1].childNodes[1].classList.remove('mb-lg-0');
+child1.childNodes[1].childNodes[1].childNodes[3].classList.add('col-lg-6');
+child1.childNodes[1].childNodes[1].childNodes[3].classList.remove('mb-lg-0');
+child1.childNodes[1].childNodes[1].childNodes[5].classList.add('col-lg-6');
+child1.childNodes[1].childNodes[1].childNodes[5].classList.remove('mb-lg-0');
+child1.childNodes[1].childNodes[1].childNodes[7].classList.add('col-lg-6');
+child1.childNodes[1].childNodes[1].childNodes[7].classList.remove('mb-lg-0');
+
+
+child2.classList.add('col-lg-6');
+child2.style.marginTop = "50px";
+child2.childNodes[1].childNodes[3].childNodes[1].classList.add('col-lg-12');
+child2.childNodes[1].childNodes[3].childNodes[3].classList.add('col-lg-12');
+
+
+var elem = child2.childNodes[1].childNodes[1];
+elem.parentNode.removeChild(elem);
+var wrapper = document.createElement('div'); 
+wrapper.setAttribute("id", "newParent");
+wrapper.classList.add('row');
+wrapper.appendChild(child1.cloneNode(true)); 
+child1.parentNode.replaceChild(wrapper, child1);
+wrapper.appendChild(child2 .cloneNode(true)); 
+child2.parentNode.removeChild(child2);

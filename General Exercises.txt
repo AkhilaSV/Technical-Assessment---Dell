@@ -1,0 +1,46 @@
+﻿1. Assess your knowledge level on the following languages (1 = none; 5 = expert): 
+o Vanilla JS - 1
+o jQuery - 3
+o HTML/HTML5 - 4
+o CSS/CSS3 - 4
+o Ajax - 4 (More familiar with Axios)
+o AngularJS - 2
+o Bootstrap - 4
+o Node JS - 3
+________________
+
+2. What is the width of a container with 100px of width and 5px of padding? 
+Answer - Width - 100px; Outerwidth/clientwidth - 120px
+We can get the width of a div container in JavaScript by using clientWidth property (which returns actual space used by displayed content) and/or width which returns the width set by width css. Using jQuery, we can use the .width() method to get the div container’s content width and/or we can use .outerWidth() method if we need to include padding and borders.
+________________
+
+3. How to apply a click event to all paragraphs except for the last? 
+Answer -  Using jQuery - $("p:not(.last)").click(function(){});
+________________
+
+4. Why does the alert show "Jack" first and then undefined? 
+function identity() { 
+ var name = 'Jack'; 
+ alert(name); 
+ return name; 
+}; 
+var who = identity(); 
+alert(who);
+
+
+Answer - function identity() { 
+ var name = 'Jack'; 
+ alert(name);  // Displays alert Jack
+ return name; 
+}; 
+var who = identity(); // who is assigned return value ‘Jack’
+alert(who); // Displays alert Jack
+
+
+In both cases alert would display Jack. Not sure if I missed to understand anything as questions mentions undefined in the 2nd case.
+________________
+
+5. Are display: none; and visibility: hidden; are different? Explain.
+Answer - Display:none; is used to hide and show elements without deleting and recreating them. Takes no space. With display:none, we are effectively removing the element from the DOM. At the same time, however, we have grant access to that element, and can mutate it, style it, or even change the display value so that it is visible in the DOM again. The most common values for the CSS display property are “block”, “inline” and “inline-block”.
+visibility: hidden; also hides an element, but will still take up the same space as before. This HTML element still has an effect on the DOM. To make content visible when intended, use visibility: inherit; instead of visibility: visible; to avoid accidentally showing content.
+________________

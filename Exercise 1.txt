@@ -1,0 +1,20 @@
+﻿EXERCISE: Please write the code to change the order of the ANAV filter category (Shipping  to second place and Form factor to first place and Processor at third place ) from  the below URL 
+https://www.dell.com/en-us/shop/desktop-computers/sr/desktops/xps-desktops?~ck=bt
+
+CODE: 
+
+var element1 = document.getElementsByClassName("leftanav__option__box")[0].childNodes[4];
+var element2 = document.getElementsByClassName("leftanav__option__box")[0].childNodes[5];
+var clonedElement1 = element1.cloneNode(true);
+var clonedElement2 = element2.cloneNode(true);
+
+element2.parentNode.replaceChild(clonedElement1, element2);
+element1.parentNode.replaceChild(clonedElement2, element1);
+
+
+
+LOGIC:
+
+const filterCategory = [{name:'shipping', caption_options: ['option1', 'option2']}, {name:'form Factor', caption_options: ['option3', 'option4']}, {name:'processor', caption_options: ['option5', 'option6']}];
+[filterCategory[0], filterCategory[1]] = [filterCategory[1], filterCategory[0]];
+console.log(filterCategory);

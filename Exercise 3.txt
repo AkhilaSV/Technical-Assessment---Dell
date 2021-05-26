@@ -1,0 +1,43 @@
+﻿EXERCISE:
+https://www.dell.com/en-us/shop/accessories 
+From the above URL, 
+1. Replace all the images of the Networking products with the Cameras, Photo  & Video ones. 
+
+CODE:
+
+document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(1) > a > div.half-inner-module-image.text-centered > img").src="//snpi.dell.com/snp/images2/110/a8910375.jpg"
+document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(2) > a > div.half-inner-module-image.text-centered > img").src="//snpi.dell.com/snp/images2/110/a9552314.jpg"
+document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(3) > a > div.half-inner-module-image.text-centered > img").src="//snpi.dell.com/snp/images2/110/ab391669.jpg"
+document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(4) > a > div.half-inner-module-image.text-centered > img").src="//snpi.dell.com/snp/images2/110/ab286744_v1.jpg"
+
+________________
+
+2. Change the background color of the Networking hero image to Purple. 
+
+CODE:
+
+document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-hero-outer-container > a > div").style.backgroundColor = "purple";
+________________
+
+3. Create a self-invoking function that calculates the sum of all products listed  on the Power, Batteries & Adapters section and triggers an alert with the  result. 
+
+CODE:
+
+(function () {
+var prod1= document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(27) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(1) > div").innerText.split(" ")[2].substring(1);
+var prod2 = document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(27) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(2) > div").innerText.split(" ")[2].substring(1);
+var prod3 = document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(3) > div").innerText.split(" ")[2].substring(1);
+var prod4 = document.querySelector("#topcontent > div.top-offset-20 > div:nth-child(15) > div > div.col-xs-12.col-sm-6.half-modules-outer-container > div:nth-child(4) > div").innerText.split(" ")[2].substring(1);
+var sum = parseFloat(prod1) + parseFloat(prod2) + parseFloat(prod3) + parseFloat(prod4);
+alert(sum);
+}());
+________________
+
+Bonus 
+3.Find the Slider and make the slider's auto play feature stops (only if it has at  least 2 slides) 
+
+CODE:
+
+if ($('.slides li').length >= 2) { 
+$('.flexslider').flexslider({  slideshow: false });
+}
